@@ -50,7 +50,7 @@ const authController = {
         new Date().getTime() + 1000 * 60 * 60 * 24 * 365 * 10
       ); // ~10y
       return res
-        .cookie("token", accessToken, { expires: farFuture })
+        .cookie("token", accessToken, { expires: farFuture , secure: true, httpOnly: true })
         .status(200)
         .json({
           user: query,
@@ -85,7 +85,7 @@ const authController = {
         new Date().getTime() + 1000 * 60 * 60 * 24 * 365 * 10
       ); // ~10y
       return res
-        .cookie("token", accessToken, { expires: farFuture })
+        .cookie("token", accessToken, { expires: farFuture , secure: true, httpOnly: true })
         .status(200)
         .json({
           user: query,
