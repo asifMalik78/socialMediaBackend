@@ -50,7 +50,7 @@ const authController = {
         new Date().getTime() + 1000 * 60 * 60 * 24 * 365 * 10
       ); // ~10y
       return res
-        .cookie("token", accessToken, { expires: farFuture , secure: true, httpOnly: true })
+        .cookie("token", accessToken, { expires: farFuture, httpOnly: false })
         .status(200)
         .json({
           user: query,
@@ -85,7 +85,7 @@ const authController = {
         new Date().getTime() + 1000 * 60 * 60 * 24 * 365 * 10
       ); // ~10y
       return res
-        .cookie("token", accessToken, { expires: farFuture , secure: true, httpOnly: true })
+        .cookie("token", accessToken, { expires: farFuture, httpOnly: false })
         .status(200)
         .json({
           user: query,
@@ -102,7 +102,7 @@ const authController = {
       const user = await User.findById(id)
         .select("-password")
         .populate("following", "name img");
-      return res.status(200).json({user:user});
+      return res.status(200).json({ user: user });
     } catch (error) {
       return next(error);
     }
