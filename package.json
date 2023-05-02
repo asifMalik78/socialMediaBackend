@@ -20,5 +20,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.1",
     "validator": "^13.9.0"
+  },
+  "engines": {
+    "node": ">=14 <19"
   }
 }
