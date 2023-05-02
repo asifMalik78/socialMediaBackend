@@ -14,9 +14,10 @@ import { APP_PORT, MONGO_URI } from "./config/index.js";
 config();
 const app = express();
 
+
 const corsOptions = {
-  origin: "https://deluxe-biscuit-fb6d60.netlify.app/",
-  credentials: true, //access-control-allow-credentials:true
+  origin: 'https://deluxe-biscuit-fb6d60.netlify.app',
+  credentials: true
 };
 
 app.use(cors(corsOptions));
