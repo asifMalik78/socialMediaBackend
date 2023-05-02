@@ -15,7 +15,7 @@ config();
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://deluxe-biscuit-fb6d60.netlify.app/",
   credentials: true, //access-control-allow-credentials:true
 };
 
