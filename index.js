@@ -16,7 +16,7 @@ const app = express();
 
 
 const corsOptions = {
-  origin: 'https://deluxe-biscuit-fb6d60.netlify.app',
+  origin: 'https://courageous-crisp-22e712.netlify.app/',
   credentials: true
 };
 
