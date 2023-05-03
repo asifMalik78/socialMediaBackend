@@ -15,6 +15,7 @@ const app = express();
 
 const corsOptions = {
   origin:"https://fluffy-blancmange-e9fcc0.netlify.app",
+  credentials: true
 };
 
 app.use(cors(corsOptions));
