@@ -8,16 +8,15 @@ import user from "./routes/user.js";
 import post from "./routes/post.js";
 import comment from "./routes/comment.js";
 import errorHandler from "./middlewares/errorHandler.js";
-import { APP_PORT, MONGO_URI } from "./config/index.js";
+import { APP_PORT, MONGO_URI, ORIGIN } from "./config/index.js";
 
 // basic setup
 config();
 const app = express();
 
-
 const corsOptions = {
-  origin: 'https://beautiful-manatee-6de726.netlify.app',
-  credentials: true
+  origin: ORIGIN,
+  credentials: true,
 };
 
 app.use(cors(corsOptions));

@@ -2,6 +2,4 @@ import { config } from "dotenv";
 
 config();
 
-export const {
-    MONGO_URI, APP_PORT, JWT_SECRET
-} = process.env;
+export const { MONGO_URI, APP_PORT, JWT_SECRET, ORIGIN } = process.env;
