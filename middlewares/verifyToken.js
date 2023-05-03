@@ -3,13 +3,13 @@ import jwtService from "../services/jwtService.js";
 
 const verifyToken = async (req, res, next) => {
   const authHeader = req.headers;
-  if (!req.cookies.token) {
+
+  if (!authHeader.token) {
     return next(customErrorHandler.unAuthorized());
   }
 
-  const accessToken = req.cookies.token;
+  const accessToken = authHeader.token.split(' ')[1];
   const obj = jwtService.verifyToken(accessToken);
-
   req._id = obj._id;
   next();
 };
