@@ -15,7 +15,7 @@ config();
 const app = express();
 
 const corsOptions = {
-  origin: ORIGIN,
+  origin: [`${ORIGIN}`, "http://localhost:300"],
   credentials: true,
 };
 
