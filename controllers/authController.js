@@ -46,15 +46,11 @@ const authController = {
         .select("-password")
         .populate("following", "name img");
       const accessToken = jwtService.createToken({ _id: user._id });
-      let farFuture = new Date(
-        new Date().getTime() + 1000 * 60 * 60 * 24 * 365 * 10
-      ); // ~10y
-      return res
-        .cookie("token", accessToken, { expires: farFuture, httpOnly: false })
-        .status(200)
-        .json({
-          user: query,
-        });
+
+      return res.status(200).json({
+        user: query,
+        accessToken,
+      });
     } catch (error) {
       return next(error);
     }
@@ -81,15 +77,10 @@ const authController = {
         .populate("following", "name img ");
       const accessToken = jwtService.createToken({ _id: user._id });
 
-      let farFuture = new Date(
-        new Date().getTime() + 1000 * 60 * 60 * 24 * 365 * 10
-      ); // ~10y
-      return res
-        .cookie("token", accessToken, { expires: farFuture, httpOnly: false })
-        .status(200)
-        .json({
-          user: query,
-        });
+      return res.status(200).json({
+        user: query,
+        accessToken,
+      });
     } catch (error) {
       return next(error);
     }

@@ -1,7 +1,6 @@
 import { config } from "dotenv";
 import express from "express";
 import cors from "cors";
-import cookieParser from "cookie-parser";
 import db from "./database/connectDB.js";
 import auth from "./routes/auth.js";
 import user from "./routes/user.js";
@@ -20,7 +19,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 // routes
